@@ -34,6 +34,7 @@ import java.io.*;
 /**
  * Grammar to parse Java version 1.5
  * @author Sreenivasa Viswanadha - Simplified and enhanced for 1.5
+ * @author (increased by Paulo Igor L. Bender) leopoldes@gmail.com 
  */
 public class JavaParser
 {

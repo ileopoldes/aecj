@@ -31,7 +31,7 @@ São Leopoldo – RS – Brazil
 	verificação de algumas das melhores práticas sugeridas por [BLOCH]
 	
 	1) Variáveis inicializadas mas não utilizadas;
-	2) Comparação de objetos sem utilizar equals;
+	2) Comparação de objetos sem utilizar equals; 
 	3) A verificação de estilo por sua vez irá validar padrão de nomenclatura (checkstyle como exemplo);
 	4) Visibilidade de atributos;
 	5) Tamanho de métodos e classes (defini-se um padrão);

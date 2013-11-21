@@ -129,6 +129,12 @@ public class JavaParser
       catch(Exception e) { e.printStackTrace(); }
    }
 
+  /*
+  * variables to control aecj
+  */ 
+  public static int qtdeImports = 0;	// example
+  public static Map listOfVariables = new HashMap();
+
   public static void main(String args[]) {
     JavaParser parser;
     if (args.length == 0) {
@@ -152,6 +158,8 @@ public class JavaParser
     try {
       parser.CompilationUnit();
       System.out.println("Java Parser Version 1.1:  Java program parsed successfully.");
+      System.out.println(":: Total de imports: " + qtdeImports);
+      System.out.println(":: Qtde de variáveis: " + listOfVariables.size());
     } catch (ParseException e) {
       System.out.println(e.getMessage());
       System.out.println("Java Parser Version 1.1:  Encountered errors during parse.");
@@ -467,6 +475,9 @@ void ImportDeclaration():
 {}
 {
   "import" [ "static" ] Name() [ "." "*" ] ";"
+  {
+    qtdeImports++;    
+  }
 }
 
 /*

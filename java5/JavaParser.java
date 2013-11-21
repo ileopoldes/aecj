@@ -6,6 +6,7 @@ import java.util.HashMap;
 /**
  * Grammar to parse Java version 1.5
  * @author Sreenivasa Viswanadha - Simplified and enhanced for 1.5
+ * @author aecj by Paulo Bender - leopoldes@gmail.com
  */
 public class JavaParser implements JavaParserConstants {
    /**
@@ -109,18 +110,18 @@ public class JavaParser implements JavaParserConstants {
   public static void main(String args[]) {
     JavaParser parser;
     if (args.length == 0) {
-      System.out.println("Java Parser Version 1.1:  Reading from standard input . . .");
+      System.out.println("AECJ - Java Parser Version 0.1:  Reading from standard input . . .");
       parser = new JavaParser(System.in);
     } else if (args.length == 1) {
-      System.out.println("Java Parser Version 1.1:  Reading from file " + args[0] + " . . .");
+      System.out.println("AECJ - Java Parser Version 0.1:  Reading from file " + args[0] + " . . .");
       try {
         parser = new JavaParser(new java.io.FileInputStream(args[0]));
       } catch (java.io.FileNotFoundException e) {
-        System.out.println("Java Parser Version 1.1:  File " + args[0] + " not found.");
+        System.out.println("AECJ - Java Parser Version 0.1:  File " + args[0] + " not found.");
         return;
       }
     } else {
-      System.out.println("Java Parser Version 1.1:  Usage is one of:");
+      System.out.println("AECJ - Java Parser Version 0.1:  Usage is one of:");
       System.out.println("         java JavaParser < inputfile");
       System.out.println("OR");
       System.out.println("         java JavaParser inputfile");
@@ -128,12 +129,12 @@ public class JavaParser implements JavaParserConstants {
     }
     try {
       parser.CompilationUnit();
-      System.out.println("Java Parser Version 1.1:  Java program parsed successfully.");
+      System.out.println("AECJ - Java Parser Version 0.1:  Java program parsed successfully.");
       System.out.println(":: Total de imports: " + qtdeImports);
       System.out.println(":: Vari\u00e1veis: " + listOfVariables);
     } catch (ParseException e) {
       System.out.println(e.getMessage());
-      System.out.println("Java Parser Version 1.1:  Encountered errors during parse.");
+      System.out.println("AECJ - Java Parser Version 0.1:  Encountered errors during parse.");
     }
   }
 
@@ -190,6 +191,7 @@ public class JavaParser implements JavaParserConstants {
       TypeDeclaration();
     }
     jj_consume_token(0);
+        System.out.println("= > Tokens: " + token.image);
   }
 
   final public void PackageDeclaration() throws ParseException {
